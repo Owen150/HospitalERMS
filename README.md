@@ -6,7 +6,7 @@ This is a complete hospital managemnt system written in php(Laravel)
     * Patinet Registration (IN/OUT)
     * Get Patient Registration Card (Barcode Included)
     * Search Patient
-    * Edit Pateint Details
+    * Edit Patient Details
     * Patient Profile
     * Treatment History
     * Mark as Inactive (Soft Delete)
