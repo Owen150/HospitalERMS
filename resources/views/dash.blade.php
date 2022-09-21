@@ -106,6 +106,7 @@
   </div>
   <!--End of First Info Row-->
 
+  <!--
   <div class="row mt-4">
     <div class="col-lg-7 mb-lg-0 mb-4">
       <div class="card">
@@ -140,11 +141,11 @@
         <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('./images/bg5.jpg');">
           <span class="mask bg-gradient-dark"></span>
 
-          <!--
+          
           <div class="box-header">
             <p class="mb-1 pt-2 text-bold">{{__('Quick Reports')}}</p>
           </div>
-          -->
+          
 
           <div class="card-body list-group position-relative z-index-1 d-flex flex-column h-100 p-3">
             @if(Auth::user()->user_type=='doctor' || Auth::user()->user_type=='admin')
@@ -169,10 +170,12 @@
     </div>
 
   </div>
+  -->
+
   <div class="row mt-4 justify-content-center align-items-center">
 
     <!-- Input Auth Pages-->
-    <div class="col-lg-10 mt-4">
+    <div class="col-lg-10">
         <div class="card z-index-2">
           <div class="card-header pb-0 text-center">
             <h5>Quick Links</h5>
@@ -180,6 +183,20 @@
           <div class="card-body p-3">
             <!-- Input Items-->
             <div class="row">
+
+              @if(Auth::user()->user_type=='doctor' || Auth::user()->user_type=='admin')
+              <div class="col-sm-2">
+                <a href="{{route('mon_stat_report')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
+                  {{ __('Monthly Statistic Report')}}
+                </a>
+              </div>
+
+              <div class="col-sm-2">
+                <a href="{{route('mon_stat_report')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
+                  {{__('Statistics')}}
+                </a>
+              </div>
+              @endif
               <!-- Quick Links Items for All Users except Pharmacists e.g Doctor, SuperAdmin, lab, cashier etc-->
               @if(Auth::user()->user_type!='pharmacist')
                   <div class="col-sm-2">
@@ -218,18 +235,31 @@
               <!-- Quick Links Items for Pharmacists -->
               @if(Auth::user()->user_type=='pharmacist' || Auth::user()->user_type=='admin')
               <div class="col-sm-2">
-                  <a href="{{route('issueMedicineView')}}" class="btn btn-app" style="height: 10vh;">
+                  <a href="{{route('issueMedicineView')}}" class="btn btn-app" style="width: 110px;height: 10vh;">
                     {{__('Issue Medicine')}}
                   </a>
               </div>
               @endif
 
+              <div class="col-sm-2">
+                <a href="{{route('profile')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
+                  {{__('User Profile')}}
+                </a>
+              </div>
+
+              <div class="col-sm-2">
+                <a href="{{route('attendance_report')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
+                  {{__('Attendance Report')}}
+                </a>
+              </div>
+
           </div>
 
           <!--Additional Quick Links Items for Super Admin-->
-          <div class="row mt-4 mb-2">
+          <div class="row mb-2">
               @if(Auth::user()->user_type=='admin')
               <!-- ./col -->
+
               <div class="col-sm-2">
                   <a href="{{route('newuser')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
                     {{__('Register User')}}
@@ -249,12 +279,6 @@
               </div>
               @endif
 
-              <div class="col-sm-2">
-                  <a href="{{route('profile')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
-                    {{__('User Profile')}}
-                  </a>
-              </div>
-
               @if(Auth::user()->user_type=='admin')
               <div class="col-sm-2">
                   <a href="{{route('createnoticeview')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
@@ -267,13 +291,13 @@
         </div>
       </div>
 
-  <div class="row mt-4">
+  <div class="row mt-4 justify-content-center align-items-center">
     <div class="col-lg-8 col-md-6 mb-md-0 mt-4 mb-4">
       <div class="card">
         <div class="card-header pb-0">
           <div class="row">
             <div class="col-lg-6 col-7">
-              <h6>Noticeboard</h6>
+              <h5>Noticeboard</h5>
             </div>
           </div>
         </div>
@@ -301,14 +325,13 @@
         <!--End of Card Body-->
       </div>
     </div>
-
+    
+    <!--
     <div class="col-lg-4 col-md-6 mt-4">
       <div class="card h-100">
         <div class="card-header pb-0">
           <h6>Calendar</h6>
-          <!-- tools box -->
           <div class="pull-right box-tools">
-            <!-- button with a dropdown -->
             <div class="btn-group">
                 <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-bars"></i></button>
@@ -324,14 +347,13 @@
             <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
             </button>
         </div>
-        <!-- /. tools -->
         </div>
         <div class="card-body no-padding">
-          <!--The calendar -->
           <div id="calendar" style="width: 100%"></div>
         </div>
       </div>
     </div>
+    -->
   </div>
 
 @endsection
