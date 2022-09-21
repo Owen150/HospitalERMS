@@ -1,4 +1,4 @@
-# Wanini Kireri Magereza Hospital Management System
+# WKMH Electronic Records Management System
 This is a complete hospital managemnt system written in php(Laravel)
 
 ## This has the following features
