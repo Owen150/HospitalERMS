@@ -1,4 +1,4 @@
-# Smart Hospitals (Hospital Management System)
+# Wanini Kireri Magereza Hospital Management System
 This is a complete hospital managemnt system written in php(Laravel)
 
 ## This has the following features
