@@ -192,7 +192,7 @@
               </div>
 
               <div class="col-sm-2">
-                <a href="{{route('mon_stat_report')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
+                <a href="{{route('stats')}}" class="btn btn-app" style="width: 110px; height: 10vh;">
                   {{__('Statistics')}}
                 </a>
               </div>
