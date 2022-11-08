@@ -28,14 +28,14 @@ $outlet = 'Rural Ayruvedic Hospital Kesbawa'?>
     <div class="row">
 
         <div class="col-md-9">
-            <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs">
+            <div class="nav-tabs-custom mr-4">
+                <ul class="nav nav-tabs mr-4">
 
                     <li
                         class="@if (!(session('success') || session('errors') ||session('errorpw') || session('successpw')||session('successcn')||session('successedit'))) active @endif">
                         <a href="#activity" data-toggle="tab"
                             aria-expanded="@if (session('success') || session('errors')||session('errorpw') || session('successpw')||session('successcn')||session('successedit')) false @else true @endif">Activity
-                            Log</a>
+                            Log/</a>
                     </li>
 
                     <li
@@ -60,52 +60,48 @@ $outlet = 'Rural Ayruvedic Hospital Kesbawa'?>
 
                     <div class="tab-pane @if (!(session('success')||session('successmail') || session('errors') ||session('errorpw') || session('successpw')||session('successcn')||session('successedit'))) active @endif"
                         id="activity">
-                        <div class="box">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-10">                            
                             <!-- /.box-header -->
-                            <div class="box-body">
+                            <div class="card-body px-0 pt-2 pb-4">
                                 <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <table id="example1" class="table table-bordered table-striped dataTable"
+                                        <div class="card-body px-0 pt-2">
+                                            <table id="example1" class="table table-responsive align-items-center"
                                                 role="grid" aria-describedby="example1_info">
                                                 <thead>
                                                     <tr>
-                                                        <th>Description</th>
-                                                        <th>Subject Id</th>
-                                                        <th>Subject Type</th>
-                                                        <th>Causer Type</th>
+                                                        <th class="font-weight-bolder text-secondary">Description</th>
+                                                        <th class="font-weight-bolder text-secondary">Subject Id</th>
+                                                        <th class="font-weight-bolder text-secondary">Subject Type</th>
+                                                        <th class="font-weight-bolder text-secondary">Causer Type</th>
 
-                                                        <th>Created At</th>
+                                                        <th class="font-weight-bolder text-secondary">Created At</th>
 
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($activity as $app)
                                                     <tr>
-                                                        <td>{{$app->description}}</td>
-                                                        <td>{{$app->subject_id}}</td>
-                                                        <td>{{explode('\\',$app->subject_type)[1]}}</td>
-                                                        <td>{{$app->causer_type}}</td>
-                                                        <td>{{$app->created_at}}</td>
+                                                        <td class="text-center" style="font-size:13px;">{{$app->description}}</td>
+                                                        <td class="text-center" style="font-size:13px;">{{$app->subject_id}}</td>
+                                                        <td class="text-center" style="font-size:13px;">{{explode('\\',$app->subject_type)[1]}}</td>
+                                                        <td class="text-center" style="font-size:13px;">{{$app->causer_type}}</td>
+                                                        <td class="text-center" style="font-size:13px;">{{$app->created_at}}</td>
 
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
-                                                <tfoot>
-                                                    <th>Description</th>
-                                                    <th>Subject Id</th>
-                                                    <th>Subject Type</th>
-                                                    <th>Causer Type</th>
-                                                    <th>Created At</th>
-
-                                                </tfoot>
+                                                
                                             </table>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             <!-- /.box-body -->
                         </div>
+                        
                     </div>
                     <!-- /.tab-pane -->
 
@@ -399,33 +395,33 @@ $outlet = 'Rural Ayruvedic Hospital Kesbawa'?>
                     <p class="text-muted text-center">{{ucFirst($user_type)}}</p>
 
                     <ul class="list-group list-group-unbordered">
-                        <li class="list-group-item">
+                        <li class="list-group-item" style="font-size: 14px">
                             <b>User ID :</b> <a class="pull-right">{{$id}}</a>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item" style="font-size: 14px">
                             <b>Email :</b> <a class="">{{$email}}</a>
                         </li>
-                        <li class="list-group-item">
+                        <li class="list-group-item" style="font-size: 14px">
                             <b>Contact No :</b> <a class="pull-right">{{$tp}}</a>
                         </li>
                     </ul>
 
-                    <a href="#" class="btn btn-warning btn-block"><b>Edit Profile</b></a>
+                    <a href="#" class="btn btn-warning btn-block text-center"><b>Edit Profile</b></a>
                 </div>
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->
 
             <!-- About Me Box -->
-            <div class="box box-success">
+            <div class="card mt-3 ">
 
-                <div class="box-header with-border">
+                <div class="box-header with-border text-center">
                     <h3 class="box-title">About Me</h3>
                 </div>
                 <!-- /.box-header -->
 
-                <div class="box-body">
-                    <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
+                <div class="card-body p-3">
+                    <strong><i class="fa fa-book margin-r-5 mr-1"></i> Education</strong>
 
                     <p class="text-muted">
                         {{$education}}
@@ -433,24 +429,24 @@ $outlet = 'Rural Ayruvedic Hospital Kesbawa'?>
 
                     <hr>
 
-                    <strong><i class="fa fa-map-marker margin-r-5"></i> Location</strong>
+                    <strong><i class="fa fa-map-marker margin-r-5 mr-1"></i> Location</strong>
 
                     <p class="text-muted">{{$location}}</p>
 
                     <hr>
 
-                    <strong><i class="fa fa-pencil-alt margin-r-5"></i> Skills</strong>
+                    <strong><i class="fa fa-pencil-alt margin-r-5 mr-1"></i> Skills</strong>
                     <br>
-                    <span styles="display:inline-block;" class="label label-danger">Communication Skills</span>
-                    <span styles="display:inline-block;" class="label label-success">Emotional Intelligence</span>
-                    <span styles="display:inline-block;" class="label label-info">Problem-Solving Skills</span>
+                    <span styles="display:inline-block;" class="label label-danger">Communication Skills</span><br>
+                    <span styles="display:inline-block;" class="label label-success">Emotional Intelligence</span><br>
+                    <span styles="display:inline-block;" class="label label-info">Problem-Solving Skills</span><br>
                     <span styles="display:inline-block;" class="label label-primary">Decision-Making Skills</span>
                     <br>
                     {{$skills}}
 
                     <hr>
 
-                    <strong><i class="fas fa-sticky-note margin-r-5"></i> Notes</strong>
+                    <strong><i class="fas fa-sticky-note margin-r-5 mr-1"></i> Notes</strong>
 
                     <p>{{$notes}}</p>
                 </div>
