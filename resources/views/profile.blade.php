@@ -406,14 +406,14 @@ $outlet = 'Rural Ayruvedic Hospital Kesbawa'?>
                         </li>
                     </ul>
 
-                    <a href="#" class="btn btn-warning btn-block text-center"><b>Edit Profile</b></a>
+                    <a href="#" class="btn btn-warning btn-block text-center mt-3 ml-5 "><b>Edit Profile</b></a>
                 </div>
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->
 
             <!-- About Me Box -->
-            <div class="card mt-3 ">
+            <div class="card mt-2 ">
 
                 <div class="box-header with-border text-center">
                     <h3 class="box-title">About Me</h3>
